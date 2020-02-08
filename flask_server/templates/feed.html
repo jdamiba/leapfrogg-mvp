@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>
+        <a href="/user/{{ current_user.username }}">{{ current_user.username }}</a>'s Feed
+    </h1>
+    
+    {% if prev_url %}
+        <a href="{{ prev_url }}">Newer posts</a>
+        {% endif %}
+        {% if next_url %}
+        <a href="{{ next_url }}">Older posts</a>
+    {% endif %}
+    
+    <div class="row">
+        {% for post in posts %}
+            {% include '_post.html' %}
+        {% endfor %}
+    </div>
+    <br/>
+{% endblock %}

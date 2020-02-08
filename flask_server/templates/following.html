@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>
+        <a href="/user/{{ current_user.username }}">{{ current_user.username }}</a> is Following:
+    </h1>
+    
+    {% for user in usernames %}
+        <div class="row">
+            <a href="/user/{{ user.username }}">{{ user.username }}</a>
+        </div>
+    {% endfor %}
+    <br/>
+{% endblock %}

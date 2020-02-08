@@ -1,0 +1,5 @@
+# Welcome to Microblog!
+
+This is an example application featured in Miguel Grinberg's [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world). See the tutorial for instructions on how to work with it.
+
+User info is stored in a MySQL database hosted in the same Heroku dyno as the Flask web server.

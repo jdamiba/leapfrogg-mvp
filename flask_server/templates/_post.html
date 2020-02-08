@@ -1,0 +1,25 @@
+<div data-aos="fade-in" id="card" class="card m-2" style="box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75); cursor: pointer;width:300px; border-radius: 30px;">
+  <div class="youtube" id="{{ post.url }}" style="height:300px; border-radius: 30px;"></div>
+  <div class="card-body">
+    {% if post.body %}
+          <div>
+            <p>{{ post.body }}</p>
+          </div>
+    {% endif %}
+    <div>
+      posted by: 
+      <a href="{{ url_for('user', username=post.author.username) }}">
+        {{ post.author.username }}
+      </a>
+    </div>
+    <div>
+      <button class="btn"><a href="#" id="hide">
+          hide
+      </a></button>
+      {% if post.author.id == current_user.id %}
+        <button class="btn"><a href="/update/{{post.id}}">update</a></button>
+        <button class="btn"><a href="/delete/{{post.id}}">delete</a></button>
+      {% endif %}
+    </div>
+  </div>
+</div>
